@@ -28,6 +28,9 @@ else
   LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
+# ROSA configuration
+PRODUCT_PACKAGES += k9mail
+
 PRODUCT_COPY_FILES := \
     $(LOCAL_KERNEL):kernel
 
