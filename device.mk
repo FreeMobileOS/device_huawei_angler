@@ -29,7 +29,7 @@ else
 endif
 
 # ROSA configuration
-PRODUCT_PACKAGES += k9mail
+PRODUCT_PACKAGES += k9mail omim
 
 PRODUCT_COPY_FILES := \
     $(LOCAL_KERNEL):kernel
