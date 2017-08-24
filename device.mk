@@ -29,7 +29,7 @@ else
 endif
 
 # FreeMobileOS configuration
-PRODUCT_PACKAGES += k9mail omim
+PRODUCT_PACKAGES += k9mail omim chrome
 
 PRODUCT_COPY_FILES := \
     $(LOCAL_KERNEL):kernel
