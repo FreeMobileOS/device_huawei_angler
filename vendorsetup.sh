@@ -14,4 +14,26 @@
 # limitations under the License.
 #
 
+if ! [ -d vendor/huawei/angler ]; then
+	[ -e huawei-angler-opr5.170623.011-d2c33b5f.tgz ] || wget https://dl.google.com/dl/android/aosp/huawei-angler-opr5.170623.011-d2c33b5f.tgz
+	[ -e qcom-angler-opr5.170623.011-f645f4cf.tgz ] || wget https://dl.google.com/dl/android/aosp/qcom-angler-opr5.170623.011-f645f4cf.tgz
+	for i in *-angler-*.tgz; do
+		tar xf $i
+	done
+	mkdir tmp-bin
+	# Replace real "more" with a cat wrapper so we don't have to fake
+	# user input... (just ln -s cat tmp-bin/more will break things if
+	# cat is toybox, busybox or another unified binary)
+	echo 'exec cat "$@"' >tmp-bin/more
+	chmod +x tmp-bin/more
+	# And make sure we have GNU tar first on the path, the extract
+	# scripts don't like libarchive tar at all
+	which gtar 2>/dev/null && ln -s $(which gtar) tmp-bin/tar
+	export PATH=`pwd`/tmp-bin:$PATH
+	for i in extract-*-angler.sh; do
+		echo -e "\nI ACCEPT" |./$i
+	done
+	rm -rf tmp-bin
+fi
+
 add_lunch_combo aosp_angler-userdebug
