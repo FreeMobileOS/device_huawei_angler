@@ -15,8 +15,8 @@
 #
 
 if ! [ -d vendor/huawei/angler ]; then
-	[ -e huawei-angler-4654575-dbc76ebf.tgz ] || wget https://dl.google.com/dl/android/aosp/huawei-angler-4654575-dbc76ebf.tgz
-	[ -e qcom-angler-4654575-8c02d11f.tgz ] || wget https://dl.google.com/dl/android/aosp/qcom-angler-4654575-8c02d11f.tgz
+	[ -e huawei-angler-4712014-2b157b4b.tgz ] || wget https://dl.google.com/dl/android/aosp/huawei-angler-4712014-2b157b4b.tgz
+	[ -e qcom-angler-4712014-d1a01277.tgz ] || wget https://dl.google.com/dl/android/aosp/qcom-angler-4712014-d1a01277.tgz
 	for i in *-angler-*.tgz; do
 		tar xf $i
 	done
