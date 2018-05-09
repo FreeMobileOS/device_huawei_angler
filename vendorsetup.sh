@@ -15,8 +15,8 @@
 #
 
 if ! [ -d vendor/huawei/angler ]; then
-	[ -e huawei-angler-4712014-2b157b4b.tgz ] || wget https://dl.google.com/dl/android/aosp/huawei-angler-4712014-2b157b4b.tgz
-	[ -e qcom-angler-4712014-d1a01277.tgz ] || wget https://dl.google.com/dl/android/aosp/qcom-angler-4712014-d1a01277.tgz
+	[ -e huawei-angler-4765711-a97ae450.tgz ] || wget https://dl.google.com/dl/android/aosp/huawei-angler-4765711-a97ae450.tgz
+	[ -e qcom-angler-4765711-0fb8f338.tgz ] || wget https://dl.google.com/dl/android/aosp/qcom-angler-4765711-0fb8f338.tgz
 	for i in *-angler-*.tgz; do
 		tar xf $i
 	done
@@ -35,5 +35,3 @@ if ! [ -d vendor/huawei/angler ]; then
 	done
 	rm -rf tmp-bin
 fi
-
-add_lunch_combo aosp_angler-userdebug
