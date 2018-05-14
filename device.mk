@@ -61,11 +61,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/huawei/angler/thermal-engine-angler.conf:system/etc/thermal-engine.conf
 
-# Boot Animation
-PRODUCT_COPY_FILES += \
-    device/huawei/angler/bootanimation.zip:system/media/bootanimation.zip
-
-
 # Vendor Interface Manifest
 PRODUCT_COPY_FILES += \
     device/huawei/angler/manifest.xml:vendor/manifest.xml
