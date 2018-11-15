@@ -43,6 +43,9 @@ PRODUCT_COPY_FILES += device/huawei/angler/fstab.aosp_angler:root/fstab.angler
 $(call inherit-product, device/huawei/angler/device.mk)
 $(call inherit-product-if-exists, vendor/huawei/angler/device-vendor.mk)
 
+# Inherit fmo configuration
+$(call inherit-product-if-exists, vendor/fmo/config.mk)
+
 PRODUCT_PACKAGES += \
     WallpaperPicker
 
