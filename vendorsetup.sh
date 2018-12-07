@@ -14,24 +14,7 @@
 # limitations under the License.
 #
 
+# we started hosting this as no more AOSP support for angler since 9
 if ! [ -d vendor/huawei/angler ]; then
-	[ -e huawei-angler-4765711-a97ae450.tgz ] || wget https://dl.google.com/dl/android/aosp/huawei-angler-4765711-a97ae450.tgz
-	[ -e qcom-angler-4765711-0fb8f338.tgz ] || wget https://dl.google.com/dl/android/aosp/qcom-angler-4765711-0fb8f338.tgz
-	for i in *-angler-*.tgz; do
-		tar xf $i
-	done
-	mkdir tmp-bin
-	# Replace real "more" with a cat wrapper so we don't have to fake
-	# user input... (just ln -s cat tmp-bin/more will break things if
-	# cat is toybox, busybox or another unified binary)
-	echo 'exec cat "$@"' >tmp-bin/more
-	chmod +x tmp-bin/more
-	# And make sure we have GNU tar first on the path, the extract
-	# scripts don't like libarchive tar at all
-	which gtar 2>/dev/null && ln -s $(which gtar) tmp-bin/tar
-	export PATH=`pwd`/tmp-bin:$PATH
-	for i in extract-*-angler.sh; do
-		echo -e "\nI ACCEPT" |./$i
-	done
-	rm -rf tmp-bin
+    git clone https://github.com/FreeMobileOS/android_vendor_huawei.git --branch fmo-9 vendor/huawei/angler
 fi
