@@ -38,8 +38,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 BUILD_FINGERPRINT := google/angler/angler:8.1.0/OPM7.181105.004/5038062:user/release-keys
 
-PRODUCT_COPY_FILES += device/huawei/angler/fstab.aosp_angler:root/fstab.angler
-
 $(call inherit-product, device/huawei/angler/device.mk)
 $(call inherit-product-if-exists, vendor/huawei/angler/device-vendor.mk)
 
