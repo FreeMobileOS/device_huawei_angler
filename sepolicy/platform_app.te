@@ -15,4 +15,13 @@ r_dir_file(platform_app, sysfs)
 
 allow platform_app nfc_service:service_manager find;
 
-allow platform_app system_data_file:file { getattr open read write };
+allow platform_app system_data_file:file { getattr open read };
+
+allow platform_app cache_recovery_file:dir { search read write add_name remove_name };
+allow platform_app cache_recovery_file:file { create open write getattr setattr unlink };
+
+allow platform_app unlabeled:file unlink;
+
+allow platform_app recovery_service:service_manager find;
+
+allow platform_app storage_stub_file:dir getattr;
