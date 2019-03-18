@@ -1,5 +1,5 @@
 # Create links from /vendor to /system for AOSP without vendor builds
-ifneq (,$(filter aosp_angler, $(TARGET_PRODUCT)))
+ifneq (,$(filter fmo_angler, $(TARGET_PRODUCT)))
 
 LOCAL_PATH := $(call my-dir)
 
@@ -30,4 +30,4 @@ LOCAL_POST_INSTALL_CMD := \
 
 include $(BUILD_PHONY_PACKAGE)
 
-endif # aosp_angler
+endif # fmo_angler

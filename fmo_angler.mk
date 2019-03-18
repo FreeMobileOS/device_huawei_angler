@@ -24,7 +24,7 @@ PRODUCT_COPY_FILES := device/huawei/angler/apns-full-conf.xml:system/etc/apns-co
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-PRODUCT_NAME := aosp_angler
+PRODUCT_NAME := fmo_angler
 PRODUCT_DEVICE := angler
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := AOSP on angler
