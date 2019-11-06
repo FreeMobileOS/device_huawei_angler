@@ -16,10 +16,10 @@
 
 # we started hosting this as no more AOSP support for angler since 9
 if ! [ -d vendor/huawei/angler ]; then
-    git clone https://github.com/FreeMobileOS/android_vendor_huawei.git --branch fmo-9 vendor/huawei
+    git clone https://github.com/FreeMobileOS/android_vendor_huawei.git --branch fmo-10 vendor/huawei
 fi
 
 # let's download kernel source
 if ! [ -d kernel/huawei/angler ]; then
-    git clone https://github.com/FreeMobileOS/android_kernel_huawei_angler.git --branch 9 --depth 1 kernel/huawei/angler
+    git clone https://github.com/FreeMobileOS/android_kernel_huawei_angler.git --branch fmo-10 --depth 1 kernel/huawei/angler
 fi
