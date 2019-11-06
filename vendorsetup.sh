@@ -23,8 +23,3 @@ fi
 if ! [ -d kernel/huawei/angler ]; then
     git clone https://github.com/FreeMobileOS/android_kernel_huawei_angler.git --branch 9 --depth 1 kernel/huawei/angler
 fi
-
-# remove tycho - project fi
-if [ -d vendor/huawei/angler ]; then
-    rm vendor/huawei/angler/proprietary/app/Tycho/Tycho.apk
-fi
